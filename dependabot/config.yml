@@ -1,0 +1,18 @@
+version: 1
+update_configs:
+  - package_manager: "ruby:bundler"
+    directory: "/"
+    update_schedule: "daily"
+    automerged_updates:
+      - match:
+          dependency_type: "production"
+          update_type: "security:patch"
+          update_type: "semver:patch"
+  - package_manager: "javascript"
+    directory: "/"
+    update_schedule: "daily"
+    automerged_updates:
+      - match:
+          dependency_type: "production"
+          update_type: "security:patch"
+          update_type: "semver:patch"
